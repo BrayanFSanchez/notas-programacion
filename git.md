@@ -1,0 +1,19 @@
+## Git
+
+git init: Inicializar una carpeta con git
+
+git status: Revisar el estado general del repositorio
+
+git remote add origin <REMOTE_URL>: Se agrega la URL del repositorio remoto
+
+git branch: Revisar en que branch se esta trabajando
+
+git checkout: para cambiar de branch 
+
+git pull origin main: Traer los archivos del repositoria al entorno local
+
+git add . : Se agregan todos los cambios realizados para hacer um commit
+
+git commit -m "Mensaje descriptivo sobre el trabajo realizado": Se crea el commit que se va as subir
+
+git push origin main: Se envia el commit a la nube

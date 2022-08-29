@@ -56,3 +56,5 @@ Luego se hace el cambio en la clase:
 En el html se incrusta con:
 
     <fa-icon [icon]="faCoffee"></fa-icon>
+
+En el archivo app.component.ts, para agregar una función o variabales se deben escribir en la clase principal

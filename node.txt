@@ -1,0 +1,152 @@
+Node
+
+Objetos globales
+
+__dirname: Devuelve la ruta
+
+__filename: Ruta completa
+
+module: Objeto para separar en varios archivos
+
+require: importar varios archivos separados
+
+process: devuelve información del sistema
+
+Timers
+
+setInterval(): función que ejecuta un codigo cada cierto tiempo
+setTimeout(): ejecuta un codigo pasado cierto tiempo
+Common Modules
+
+module.exports = : para exportar hacia otro documento
+require('nombreDocumento'): para importar un documento
+exports individuales
+
+module.exports.user = user
+
+Path
+
+Ejecuta determinada logica a partir del sistema en que se trabaje
+
+const path = require('path')
+
+const filePath = path.join('/public','dist', '/styles', 'main.css')
+
+modulo fs (sync)
+
+const fs = require('fs'): Sirve para leer archivos
+
+const first = fs.readFileSync('./data/first.txt', 'utf-8')
+console.log(first)
+
+fs.writeFileSync('./data/third.txt', 'Este es un tercer archivo')
+
+fs.writeFileSync('./data/third.txt', 'Este es un tercer archivo', {
+    flag: 'a' //Append para agregar exto sin remplazar el archivo
+})
+
+modulo fs (async)
+
+fs.readFile('./data/first.txt', 'utf-8', function (error, data) {
+    console.log(data)
+    
+    if (error) {
+        console.log(error)
+    }
+})
+
+modulo http
+
+const http = require('http')
+
+const server = http.createServer(function (request, response) {
+    response.write('Hello world')
+    response.end()
+})
+
+server.listen(3000)
+
+console.log('Servidor escuchando en el puerto 3000')
+
+npm
+
+npm i lodash dayjs bootstrap 
+npm remove bootstrap
+
+npm init
+
+npm i nodemon -D
+
+global modules: instalar de forma global para todo el pc
+
+npm i nodemon -g
+npm remove nodemon -g
+
+npx: Descarga y ejecuta un modulo que no esta guardados sin instalar
+
+npx serve public/index.html: crea un servidor sin instalar la dependencia
+
+promises
+
+const {readFile} = require('fs')
+
+const getText = (pathFile) => {
+    return new Promise(function (resolve, reject) {
+        readFile(pathFile, 'utf-8', (err, data) => {
+            if (err) {
+                reject(err)
+            }
+
+            resolve(data)
+        })
+    })
+}
+
+getText('.data/fourth.txt') //Acá esta lo que interesa
+    .then((result)=>console.log(result))
+    .cath(error=>console.log(error))
+
+async/await: manera mas simple y moderna de escribir promesas
+
+async function read() {
+    try {
+        const result = await getText('./data/first.txt')
+        console.log(result)
+    } catch (error) {
+        console.log(error)
+    }
+}
+
+read()
+
+promisify
+
+const {promisify} = require('util')
+
+const readFilePromise = promisify(readFile)
+
+fs promises
+
+const {readFile} = require('fs/promisify')
+
+events: 
+
+const EventEmitter = require('events')
+const customEmitter = new EventEmitter()
+customEmitter.on('response', (data) => {
+    console.log(data)
+})
+
+customEmitter.emit('response', 'Hello world')
+
+streams
+
+const {createReadStream} = require('fs')
+
+const stream = createReadStream('./data/first.txt', 'utf-8')
+
+stream.on('data', (chunk) => {
+    console.log(chunk)
+})
+
+streams y http

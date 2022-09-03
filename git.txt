@@ -17,3 +17,5 @@ git add . : Se agregan todos los cambios realizados para hacer um commit
 git commit -m "Mensaje descriptivo sobre el trabajo realizado": Se crea el commit que se va as subir
 
 git push origin main: Se envia el commit a la nube
+
+git log: para ver el historial de commits

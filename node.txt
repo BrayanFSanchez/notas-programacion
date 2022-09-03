@@ -150,3 +150,82 @@ stream.on('data', (chunk) => {
 })
 
 streams y http
+
+const http = require('http')
+const {createReadStream} = require('fs')
+
+const server = http.createServer((req, res) => {
+    const fileStram = createReadStream('./data/bigfile.txt', {
+        encoding: 'utf-8'
+    })
+
+    fileStream.on('data', (chunk) => {
+        fileStream.pipe(res)
+    })
+
+    fileStream.on('error', error => {
+        console.log(error)
+    })
+})
+
+server.listen(3000)
+console.log(´server on port ${3000}´)
+
+Ecmascript modules
+
+package.json {
+    "type": "module",
+}
+
+export default
+import math from './math/index.js'
+
+fetch
+
+async function loadData() {
+    try {
+        const res = await fetch('https://jsonplaceholder.typicode.com/post')
+        const data = await res.json()
+        console.log(data)
+    } catch (error) {
+        console.log(error)
+    }
+}
+
+loadData()
+
+express
+
+npm i e express
+
+const express = require('express')
+import express from 'express'
+
+const app = express()
+
+app.get('/', function (req, res) {
+    res.send('Hello World')
+})
+
+app.listen(3000)
+console.log('Sever on port', 3000)
+
+deploy
+
+heroku: gratuito
+
+Descargar heroku cli
+heroku -- version
+heroku login
+Luego hay que crear un repositorio de gratuito
+git init
+git add .
+git commit -m "First commit"
+
+app.listen(process.env.PORT || 3000)
+"scripts": {
+    "start: "node src/index.js"
+}
+heroku git:remote -a nombre-aplicacion
+git push heroku master
+heroku open

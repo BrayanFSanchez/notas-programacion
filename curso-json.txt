@@ -1,0 +1,48 @@
+Tipos de datos:
+number
+strings
+boolean
+arrays
+object
+null
+
+key:value
+{
+    "name":"eugenia",
+    "age":27
+}
+
+myfile.json
+
+mime type
+application/json
+
+Objeto de javascript 
+const user = {
+    "name":"Ryan",
+    "lastname": "Ray"
+}
+
+Acceder a un dato
+user.name
+
+Convertierte a String y luego a JSON
+JSON.stringify(user)
+
+Arreglo de objetos
+[
+    {},
+    {}
+]
+
+Convertir JSON a un onjeto de javascript
+JSON.parse()
+
+Ver datos JSON desde javascript
+fetch('https://jsonplaceholder.typicode.com/post')
+    then(response => {
+        return response.json()
+    })
+    .then(data => {
+        console.log(data)
+    })

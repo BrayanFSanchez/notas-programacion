@@ -1,0 +1,225 @@
+Objeto Literal
+{}
+
+const user = {
+    name: "Ryan", //Propiedades
+    lastname: "Ray",
+    age: 30,
+    hobbies: ['read', 'programming', 'run'],
+    address: {
+        street: "some street"
+    }
+}
+
+Propiedades: datos que describen a un objeto
+
+Métodos: cosas que puede hacer el objeto
+
+function showFullName() {
+    return "Ryan Ray"
+}
+
+const user = {
+    name: "Ryan", //Propiedades
+    lastname: "Ray",
+    age: 30,
+    showFullName() { //Método
+        return "Ryan Ray"
+    }
+}
+
+user.showFullName() //Ejecutar un método
+
+this: hace referencia a las propiedades de un objeto
+
+const user = {
+    name: "Ryan", //Propiedades
+    lastname: "Ray",
+    age: 30,
+    showFullName() {
+        return this.name + " " + this.lastname
+    }
+}
+
+const account = {
+    number: "476463567",
+    amount: 100,
+    deposit(quantity) {
+        this.amount = this.amount + quantity
+    },
+    wthdraw(quantity) {
+        this.amount = this.amount - quantity
+    }
+}
+
+account.deposit(100)
+account.wthdraw(10)
+
+constructor: sirven para crear objetos con propiedades y Métodos
+
+function Person() {
+    this.name = ""
+    this.lastname = ""
+    this.age = 0
+    this.showFullName = function () {
+        return ´${this.name} ${this.lastname}´
+    }
+}
+
+new user2 = Person()
+user2.name = "Joe"
+
+Object Constructor
+
+const person = new Object() //
+console.log(person)
+
+prototype: Hace referencia a la estructura del constructor
+
+function Person(name, lastname) {
+    this.name = name
+    this.lastname = lastname
+    this.displayName = function() {
+        return ´${this.name} ${this.lastname}´
+    }
+}
+
+const john = new Person("John", "Mcmillan")
+john.name = 'Joe'
+console.log(john.displayName())
+
+Person.prototype.greet = function() {
+    return ´Hello I'am ${this.name}´
+}
+
+Person.prototype.age = 100
+
+class conjunto de metodos que definen un objeto
+
+class Person {
+    constructor() {
+        this.name = ""
+        this.lastname = ""
+    }
+
+    greet() {
+        return ´Hello I'am ${this.name}´
+    }
+}
+
+const user = new Person('Joe', 'Ray')
+
+Asociación
+
+class Person {
+    constructor() {
+        this.name = ""
+        this.lastname = ""
+    }
+}
+
+const john = new Person('John', 'Ray')
+const maria = new Person('Maria', 'Perez')
+
+relación
+maria.parent = john;
+
+Agregación
+
+const company = {
+    name: "fazt tech",
+    employees: []
+}
+
+class Person {
+    constructor() {
+        this.name = ""
+        this.lastname = ""
+    }
+}
+
+company.employees.push(john)
+company.employees.push(maría)
+
+Composición: muchos objetos pueden pertenecer a un objeto que tiene un rol mayor pero, ninguno de estos va a tener vida independiente
+
+const person = {
+    name: 'ryan'
+    lastname: 'ray',
+    address: { //Acá esta el ejemplo
+        street: "123 baker street",
+        city: "london",
+        country: "united kingdom"
+    }
+}
+
+Encapsulación: concentrar datos y funcionalidad ocultando los datos internos
+
+const company = {
+    name: "fazt tech",
+    employees: [],
+    sortEmployees: function () {}
+}
+
+company.sortEmployees = 'asadfa' //Se actualizo la función
+
+//Constructor
+function company(name) {
+    let employees = [] //No se puede acceder
+    this.name = name
+    this.getEmployees = function() {
+        return employees
+    }
+    this.addEmployee = function(employee) {
+        employees.push(employee)
+    }
+}
+
+const company = new Company('coca cola')
+
+company.addEmployee({name: 'ryan'})
+
+Herencia: 
+
+function Person() {
+    this.name = '',
+    this.lastname = ''   
+}
+
+function Programmer() {
+    this.language = '' 
+}
+
+Programmer.prototype = new Person() //Indicando la Herencia
+const programmer = new Programmer();
+
+const person = new Person();
+
+//Utilizando clases
+class Person {
+    constructor(name, lastname) {
+        this.name = name
+        this.lastname = lastname
+    }
+}
+
+class Programmer extends Person {
+    constructor(language, name, lastname) {
+        super(name, lastname); //metodo extra para acceder a los atributos de la clase padre
+        this.language = language
+    }
+}
+
+const person = new Person('maria','perez')
+
+const programmer = new Programmer('joe', 'mcmillan', 'python')
+
+Polimorfismo: capacidad que tienen algunos objetos para manipular distintos tipos de datos de manera uniforme
+
+Sobrecarga: un metodo que acepta distintos tipos de datos
+
+function countItems(x) {
+    return x.toString().Length
+}
+
+countItems(10000)

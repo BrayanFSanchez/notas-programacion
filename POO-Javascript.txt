@@ -223,3 +223,52 @@ function countItems(x) {
 }
 
 countItems(10000)
+
+function sum(x=0, y=0, z=0) {
+    retrun x + y + z 
+}
+
+sum(10, 20)
+sum(10, 20, 30)
+
+Polimorfismo parametrico: capacidad de un metodo para trabajar con parametros de cualquier tipo
+
+function Stack() {
+    this.items = []
+
+    this.push = function(item) {
+        this.items.push(item)
+    }
+}
+
+const stack = new Stack()
+stack.push('adffad')
+
+const stack2 = new Stack()
+stack2.push(1000)
+
+Subtype Polimorfism: permite a los objetos con diferentes tipos de datos ser procesados con una relación proveniente de una herencia
+
+class Person {
+    constructor(name, lastname) {
+        this.name = name
+        this.lastname = lastname
+    }
+}
+
+class Programmer extends Person {
+    constructor(language) {
+        super(name, lastname)
+        this.language = language
+    }
+}
+
+const john = new Person('john', 'ray')
+const joe = new Programmer('jasvascript', 'joe', 'ray')
+
+function writeFullName(p) {
+    console.log(p.name + " " + p.lastname)
+}
+
+writeFullName(john)
+writeFullName(joe)

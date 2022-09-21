@@ -1,0 +1,51 @@
+Hola mundo
+
+    package main
+
+    import "fmt" //Paquete para mostrar mensaje por consola
+
+    func main() {
+        fmt.Println("Hola mundo")
+    }
+
+Para compilarse en modo de desarrollo internamente y luego ejecutarse: go run "nombre del archivo"
+
+Obs: Go toma todos los archivos dentro del mismo directorio como pertenecientes al mismo paquete, solo puede existir un una función main
+
+Definir variables
+
+	var nombre2 string = "Carlitos"
+
+	edad := 26.5 //Definir una variable de manera dinamica
+
+	var a int     // varlor incial 0
+	var b float64 // varlor incial 0
+	var c string  // varlor incial vacio
+	var d bool    // varlor incial false
+
+	const pi = 3.141592 // Variable que no se puede cambiar su tipo de dato
+
+Operadores aritmeticos
+
+    a := 20
+	b := 10
+
+	//Suma
+	result := a + b
+	fmt.Println("Suma", result)
+
+	//Resta
+	result = a - b
+	fmt.Println("Resta:", result)
+
+	//Multiplicación
+	result = a * b
+	fmt.Println("Muti:", result)
+
+	//División
+	var div float64 = 3.0 / 2.0
+	fmt.Println("Divisón:", div)
+
+	//Resto de una división
+	result = a % b
+	fmt.Println("Modulo:", result)
